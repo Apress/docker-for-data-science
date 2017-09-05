@@ -1,0 +1,10 @@
+version: '3'
+services:
+    this_jupyter:
+        image: jupyter/scipy-notebook
+        ports:
+            - 8888:8888
+        volumes:
+            - .:/home/jovyan/work
+    this_redis:
+        image: redis:alpine

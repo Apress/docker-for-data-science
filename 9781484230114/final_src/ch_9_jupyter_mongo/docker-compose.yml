@@ -1,0 +1,17 @@
+version: '3'
+services:
+  this_jupyter:
+    build: docker/jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    env_file:
+      - config/jupyter.env
+  this_mongo:
+    image: mongo
+    volumes:
+      - mongo_data:/data/db
+volumes:
+  mongo_data:
+
